@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SinhVien
+{
+    class NhanVien
+    {
+        String maNV;
+        float hsl;
+        float ngaycong;
+        double phucap;
+        public void Nhap() {
+            Console.WriteLine("Nhap ma NV");
+            this.maNV = Console.ReadLine();
+            Console.WriteLine("Nhap he so luong");
+            this.hsl = float.Parse(Console.ReadLine());
+            Console.WriteLine("Nhap ngay cong");
+            this.ngaycong = float.Parse(Console.ReadLine());
+            Console.WriteLine("Nhap phu cap");
+            this.phucap =double.Parse(Console.ReadLine());
+        }
+        public double tinhluong(float heso, double pc) {
+            return(heso * 1500000 + pc);
+        }
+        public double tinhluong(float nc)
+        {
+            return (nc * 200000);
+        }
+        public void In() {
+            Console.WriteLine("Luong theo he so la " + this.tinhluong(this.hsl, this.phucap));
+            Console.WriteLine("Luong theo ngay cong la " + this.tinhluong(this.ngaycong));
+        }
+    }
+}
